@@ -1,0 +1,45 @@
+{
+  "name": "chat-app-typescript",
+  "version": "1.0.0",
+  "description": "Real-time chat application with Socket.io and TypeScript",
+  "main": "dist/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "nodemon --watch src --exec ts-node ./src/server.ts",
+    "build": "tsc && cd client && npm install && npm run build",
+    "start": "node dist/server.js",
+    "lint": "npx eslint ./src",
+    "format": "npx prettier --write ."
+  },
+  "keywords": [
+    "chat",
+    "socket.io",
+    "typescript",
+    "real-time",
+    "websocket"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^9.31.0",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "eslint": "^9.31.0",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.38.0"
+  },
+  "dependencies": {
+    "@types/node": "^22.10.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "express": "^5.2.1",
+    "groq-sdk": "^0.37.0",
+    "highlight.js": "^11.11.1",
+    "markdown-it": "^14.1.0",
+    "mongoose": "^8.16.4",
+    "socket.io": "^4.8.1"
+  }
+}

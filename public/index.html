@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TypeScript Chat App 💬</title>
+    <meta
+      name="description"
+      content="Real-time chat application with AI assistant, built with TypeScript, Socket.io & Express"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Header -->
+      <header class="chat-header">
+        <div class="header-content">
+          <div class="logo">
+            <div class="logo-icon">💬</div>
+            <h1>TypeScript Chat</h1>
+          </div>
+          <div class="header-actions">
+            <!-- Theme Switcher -->
+            <div class="theme-switcher" id="theme-switcher">
+              <button class="theme-btn" data-theme="dark" title="Dark Mode">🌙</button>
+              <button class="theme-btn" data-theme="light" title="Light Mode">☀️</button>
+              <button class="theme-btn" data-theme="neon" title="Neon Mode">⚡</button>
+              <button class="theme-btn" data-theme="aurora" title="Aurora Mode">🌌</button>
+            </div>
+            <div class="online-status">
+              <div class="status-indicator"></div>
+              <span id="client-total">0</span>
+              <span class="status-text">online</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Chat Container -->
+      <main class="chat-main">
+        <div class="messages-container" id="message-container">
+          <!-- Messages will appear here -->
+        </div>
+
+        <!-- Typing Feedback -->
+        <div class="typing-feedback" id="feedback">
+          <div class="typing-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <span class="typing-text"></span>
+        </div>
+
+        <!-- Input Area -->
+        <form class="message-form" id="message-form">
+          <input
+            type="text"
+            id="name-input"
+            class="name-input"
+            placeholder="Your name..."
+            maxlength="30"
+            required
+          />
+          <div class="input-wrapper">
+            <input
+              type="text"
+              id="message-input"
+              class="message-input"
+              placeholder="Type a message... (mention @bot for AI)"
+              maxlength="500"
+              required
+            />
+            <div class="input-actions">
+              <button type="button" class="emoji-trigger" id="emoji-trigger" title="Add emoji">
+                😊
+              </button>
+            </div>
+          </div>
+          <button type="submit" class="send-button" aria-label="Send message">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </form>
+
+        <!-- Emoji Picker (Hidden by default) -->
+        <div class="emoji-picker" id="emoji-picker">
+          <div class="emoji-picker-header">
+            <span>Reactions</span>
+            <button type="button" class="emoji-close" id="emoji-close">✕</button>
+          </div>
+          <div class="emoji-grid" id="emoji-grid">
+            <!-- Emojis will be populated by JS -->
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="chat-footer">
+        <p>
+          Built with TypeScript, Socket.io & Express •
+          <a href="https://github.com" target="_blank" rel="noopener">View Source</a>
+        </p>
+      </footer>
+    </div>
+
+    <!-- Confetti Canvas for celebrations -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+  </body>
+</html>
