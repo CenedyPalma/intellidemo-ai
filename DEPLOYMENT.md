@@ -36,8 +36,8 @@ git push -u origin main
    | Key | Value |
    |-----|-------|
    | `NODE_ENV` | `production` |
-   | `MONGO_URI` | `mongodb+srv://canadypalma_db_user:udoy1998@cluster0.eyomlxz.mongodb.net/chat-app` |
-   | `GROQ_API_KEY` | `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` |
+   | `MONGO_URI` | `your_mongodb_connection_string` |
+   | `GROQ_API_KEY` | `your_groq_api_key` |
 
 5. Click **Deploy**
 
