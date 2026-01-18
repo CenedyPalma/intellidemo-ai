@@ -10,7 +10,12 @@ interface ChatMessage {
   isAi?: boolean;
 }
 
-const socket: Socket = io('http://localhost:4000');
+// Use production URL on Render, localhost for development
+const SOCKET_URL = import.meta.env.PROD 
+  ? window.location.origin 
+  : 'http://localhost:4000';
+
+const socket: Socket = io(SOCKET_URL);
 
 export default function AIPlayground() {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
